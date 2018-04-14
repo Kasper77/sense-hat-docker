@@ -1,5 +1,4 @@
-# Use an official Python runtime as a parent image
-FROM python:2.7-slim
+FROM raspbian/jessie
 
 # Set the working directory to /app
 WORKDIR /app
@@ -11,7 +10,7 @@ ADD app /app
 # RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 # install required packages
-RUN apt-get install -y sense-hat 
+RUN apt-get update && apt-get install -y sense-hat
 
 # Make port 80 available to the world outside this container
 #EXPOSE 80
