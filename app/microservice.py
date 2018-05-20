@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 
+import time
+from datetime import datetime
 from sense_hat import SenseHat
 sense = SenseHat()
 
@@ -14,14 +16,15 @@ while True:
   h = sense.get_humidity()
 
   # Round the values to one decimal place
-  th = round(t, 1)
+  th = round(th, 1)
   tp = round(tp, 1)
   p = round(p, 1)
   h = round(h, 1)
 
   # Create the message
   # str() converts the value to a string so it can be concatenated
-  message = "T (from Humidity,Celsius): " + str(th) + " - T (from Pressure, Celsius): " + str(tp) + " - Pres (Millibars): " + str(p) + " - Hum (percentage): " + str(h)
+  message = str(datetime.now()) + ": "
+  message += "TH (Celsius): " + str(th) + " - TP (Celsius): " + str(tp) + " - Pres (Millibars): " + str(p) + " - Hum (percentage): " + str(h)
 
   print message
 
