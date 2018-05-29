@@ -27,7 +27,6 @@ while True:
   message += "TH (Celsius): " + str(th) + " - TP (Celsius): " + str(tp) + " - Pres (Millibars): " + str(p) + " - Hum (percentage): " + str(h)
 
   print message
-
   sensor_file.write(message + '\n')
 
   # Display the scrolling message
